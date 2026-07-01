@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>ТЗ Юристу — Система аренды ТС</title>
+
+<style>
+    :root {
+        --blue: #1a73e8;
+        --green: #34a853;
+        --gray: #5f6368;
+        --light-gray: #f1f3f4;
+        --border: #dadce0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #ffffff;
+        color: #202124;
+    }
+
+    header {
+        padding: 24px 40px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 22px;
+        color: var(--blue);
+        font-weight: 600;
+    }
+
+    .subtitle {
+        margin-top: 6px;
+        color: var(--gray);
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 30px 40px;
+        max-width: 1100px;
+    }
+
+    .card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 18px 20px;
+        margin-bottom: 16px;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+
+    .card h2 {
+        font-size: 16px;
+        margin: 0 0 10px 0;
+        color: var(--blue);
+    }
+
+    ul, ol {
+        margin: 8px 0 0 18px;
+    }
+
+    .tag {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 12px;
+        font-size: 12px;
+        margin-left: 6px;
+        color: #fff;
+    }
+
+    .tag.green { background: var(--green); }
+    .tag.blue { background: var(--blue); }
+    .tag.gray { background: var(--gray); }
+
+    .warning {
+        border-left: 4px solid var(--green);
+        background: var(--light-gray);
+    }
+
+    .risk {
+        border-left: 4px solid var(--blue);
+        background: #f8f9ff;
+    }
+
+    .critical {
+        border-left: 4px solid var(--green);
+        background: #f6fff8;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>ТЕХНИЧЕСКОЕ ЗАДАНИЕ ЮРИСТУ</h1>
+    <div class="subtitle">
+        Система аренды ТС с экипажем • ДТП • ПДД • перегруз • ЭТрН • регресс
+    </div>
+</header>
+
+<div class="container">
+
+    <div class="card warning">
+        <h2>Статус документа <span class="tag gray">pre-review</span></h2>
+        Предварительный анализ рисков:
+        <ul>
+            <li>юридические риски</li>
+            <li>судебная практика</li>
+            <li>налоговые последствия</li>
+            <li>операционная реализуемость</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>1. Цель проекта <span class="tag blue">scope</span></h2>
+        <ul>
+            <li>масштабирование 50–500+ ТС</li>
+            <li>централизованный ЭТрН-контроль</li>
+            <li>снижение диспетчерской нагрузки</li>
+            <li>стандартизация рейсов</li>
+            <li>распределение рисков ДТП / ПДД / перегруза</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>2. Роли сторон <span class="tag blue">structure</span></h2>
+
+        <strong>Заказчик</strong>
+        <ul>
+            <li>перевозчик (259-ФЗ)</li>
+            <li>оператор ЭТрН</li>
+            <li>организатор процесса</li>
+        </ul>
+
+        <strong>Исполнитель</strong>
+        <ul>
+            <li>владелец ТС</li>
+            <li>экипаж</li>
+            <li>эксплуатационная функция</li>
+        </ul>
+    </div>
+
+    <div class="card risk">
+        <h2>3. Матрица ДТП-рисков <span class="tag green">risk</span></h2>
+        <ul>
+            <li>вина водителя → Заказчик / регресс к Исполнителю</li>
+            <li>технеисправность → Заказчик / регресс</li>
+            <li>перегруз → Заказчик / регресс</li>
+            <li>третьи лица → страхование</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>4. Регрессная модель <span class="tag green">claims</span></h2>
+        <ol>
+            <li>фиксация</li>
+            <li>сбор доказательств</li>
+            <li>оценка ущерба</li>
+            <li>компенсация</li>
+            <li>регресс</li>
+            <li>удержание</li>
+            <li>суд</li>
+        </ol>
+    </div>
+
+    <div class="card">
+        <h2>5. Финансовый механизм <span class="tag blue">finance</span></h2>
+        Удержания:
+        <ul>
+            <li>штрафы</li>
+            <li>ДТП</li>
+            <li>ремонт</li>
+            <li>простой</li>
+            <li>эвакуация</li>
+            <li>франшизы</li>
+        </ul>
+    </div>
+
+    <div class="card critical">
+        <h2>6. Ключевые риски <span class="tag green">critical</span></h2>
+        <ul>
+            <li>переквалификация договора</li>
+            <li>ст. 1079 ГК РФ не исключается</li>
+            <li>риск признания перевозчиком</li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>
